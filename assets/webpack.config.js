@@ -39,7 +39,9 @@ module.exports = (env, options) => {
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
-            'sass-loader',
+            'postcss-loader',
+            'sass-loader'
+
           ],
         }
       ]
@@ -50,4 +52,5 @@ module.exports = (env, options) => {
     ]
     .concat(devMode ? [new HardSourceWebpackPlugin()] : [])
   }
+  
 };
